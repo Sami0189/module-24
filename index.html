@@ -6,26 +6,80 @@
     <title>Tour Of DOM</title>
     <link rel="stylesheet" href="css/index.css">
     <style>
-        li{
+        .fruits-container li{
             color: darkorange;
+        }
+        #fruits-title{
+            color: gold;
+        }
+        .important-places{
+            color: olivedrab;
         }
     </style>
 </head>
 <body>
     <header>
         <h1> welcome to my DOM</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam unde possimus eos quibusdam porro nulla asperiores labore repellat eius beatae? Recusandae voluptates aliquam blanditiis laboriosam corrupti voluptate suscipit commodi reiciendis!</p>
     </header>
-    <main>
-        <h1>MY awesome DOM de baba</h1>
+    <main id="main-content">
+        <section>
+            <h1>MY awesome DOM de baba</h1>
         <ul>
             <li>jalali set</li>
             <li>shafayet</li>
             <li>bonobash</li>
+            <li>dom da ra baba</li>
         </ul>
+        </section>
+        <section class="fruits-container">
+            <h1 id="fruits-title" class="some-class random-class blue-bg">Fruits,I like them</h1>
+            <ul>
+                <li>Apple</li>
+                <li>Banana</li>
+                <li>Coconut</li>
+                <li>Doller</li>  
+              </ul>
+        </section>
+        <section id="places-container">
+            <h1 id="places-title" class="large-text">places, I like to visit</h1>
+            <ul id="places-list">
+                <li class="important-places">Dhaka</li>
+                <li class="important-places">Cumilla</li>
+                <li class="important-places">Cantonment</li>
+                <li class="other-places">Chattrogram</li>
+            </ul>
+        </section>
     </main>
+    <script src="js/append.js"></script>
    <script src="js/dom.js"></script>
    <script>
-    console.log('adding js inside the html file')
+    const liCollection = document.getElementsByTagName('li');
+    //console.log(liCollection);
+    for(const li of liCollection){
+        //console.log(li.innerText);
+    }
+    const allHeading = document.getElementsByTagName('h1');
+   for(const h1 of allHeading){
+    //console.log(h1.innerText);
+   }
+
+   const fruitsTitle = document.getElementById('fruits-title');
+   fruitsTitle.innerText= 'fruiis change by java script'
+   
+   
+    
+   const places = document.getElementsByClassName('important-places');
+   for(const place of places){
+    //console.log(place.innerText);
+   }
+
+   //querySelectorAll
+   const someLi = document.querySelectorAll('.fruits-container li');
+   //console.log(someLi);
+   for(const li of someLi){
+    //console.log(li.innerText);
+   }
    </script>
 </body>
 </html>
